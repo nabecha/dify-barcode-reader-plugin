@@ -1,0 +1,19 @@
+identity:
+  author: athena-technologies
+  name: barcode_reader
+  label:
+    en_US: Barcode Reader
+    ja_JP: バーコードリーダー
+  description:
+    en_US: Decode barcodes from uploaded images without calling an external API.
+    ja_JP: 外部APIを使用せず、アップロード画像からバーコードを読み取ります。
+  icon: icon.svg
+  tags:
+    - productivity
+
+tools:
+  - tools/read_barcode.yaml
+
+extra:
+  python:
+    source: provider/barcode_reader.py

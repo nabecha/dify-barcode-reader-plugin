@@ -1,0 +1,14 @@
+[project]
+name = "dify-barcode-reader"
+version = "0.0.2"
+description = "Dify Tool Plugin for decoding barcodes from uploaded images"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "dify_plugin>=0.9.0,<1.0.0",
+  "numpy>=2.0.0,<3.0.0",
+  "Pillow>=11.0.0,<13.0.0",
+  "zxing-cpp==3.1.1",
+]
+
+[tool.uv]
+package = false

@@ -1,0 +1,50 @@
+identity:
+  author: athena-technologies
+  name: read_barcode
+  label:
+    en_US: Read Barcode
+    ja_JP: バーコードを読み取る
+
+description:
+  human:
+    en_US: Read a barcode or QR code from one uploaded image.
+    ja_JP: アップロードされた画像1枚からバーコードまたはQRコードを読み取ります。
+  llm: Decode a barcode value from an uploaded image.
+
+parameters:
+  - name: image
+    type: file
+    required: true
+    form: form
+    label:
+      en_US: Barcode image
+      ja_JP: バーコード画像
+    human_description:
+      en_US: Upload a photo or screenshot containing a barcode.
+      ja_JP: バーコードが写っている写真またはスクリーンショットを指定してください。
+    llm_description: Image file containing a barcode.
+
+output_schema:
+  type: object
+  properties:
+    found:
+      type: boolean
+      description: Whether at least one barcode was found.
+    barcode:
+      type: string
+      description: Decoded value of the first barcode.
+    format:
+      type: string
+      description: Barcode format such as EAN13, Code128, QRCode.
+    count:
+      type: number
+      description: Number of barcodes detected in the image.
+    all_barcodes:
+      type: array
+      items:
+        type: string
+      description: All decoded barcode values.
+
+extra:
+  python:
+    source: tools/read_barcode.py
